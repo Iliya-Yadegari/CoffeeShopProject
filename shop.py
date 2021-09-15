@@ -3,12 +3,22 @@ class Shop:
         self.members = []
     
     def hasMember(self,memid):
-        for i in self.members:
-            if i == memid:
+        for member in self.members:
+            if member.id == memid:
                 return True
-            elif i == None:
-                return False
-            else:
-                return False
+            
+            
+      
+        return False
+            
     def addMember(self,mem):
-        self.members.append(mem.id)
+        self.members.append(mem)
+    
+    def checkOut(self, checkOutMem_id):
+        
+        for mem in self.members:
+            
+            if mem.id == checkOutMem_id:
+                mem.balance -= mem.amountToPay
+                mem.orders.clear()
+                mem.amountToPay = 0
