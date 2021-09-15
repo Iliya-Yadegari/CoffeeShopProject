@@ -1,5 +1,5 @@
 class Order:
-    def __init__(self,product,price,quantity):
+    def __init__(self,product = 0,price = 0,quantity = 0):
         
         
         
